@@ -8,6 +8,8 @@ before_install:
   # Python
   - sudo easy_install virtualenv
   - sudo pip install red-start
+  # Aptitude
+  - sudo apt-get install fontforge ttfautohint
 language: node_js
 node_js:
   - "0.10"
