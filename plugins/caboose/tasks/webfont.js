@@ -15,7 +15,6 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.config.set("build.webfont", ["webfont"]);
 	grunt.loadNpmTasks("grunt-webfont");
 
 };
