@@ -23,13 +23,8 @@
 		},
 		"fontforge": {
 			"version": "*",
-			"install": "brew install fontforge",
-			"upgrade": "brew upgrade fontforge"
-		},
-		"ttfautohint": {
-			"version": "*",
-			"install": "brew install ttfautohint",
-			"upgrade": "brew upgrade ttfautohint"
+			"install": "brew install fontforge ttfautohint",
+			"upgrade": "brew upgrade fontforge ttfautohint"
 		}
 	},
 	"scripts": {
