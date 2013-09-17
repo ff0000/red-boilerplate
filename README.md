@@ -50,14 +50,15 @@ robyn init rbp my-first-project
 Cloning a project
 ------------------
 
-For each of your robyn projects, you will need to run `grunt start` to download all necessary dependencies. The reference to your boilerplate is kept in a git submodule. Use the `--recursive` flag to clone the project and the robyn submodule at the same time.
+For each of your robyn projects, you will need to run `npm install` and `grunt start` to download all necessary dependencies. The reference to your boilerplate is kept in a git submodule. Use the `--recursive` flag to clone the project and the robyn submodule at the same time.
 
-Note that `grunt start` is automatically invoked when `robyn init` is run, so this step is not needed when creating a project. See below for the proper post-creation initializing method.
+Note that both `npm install` and `grunt start` are automatically invoked when `robyn init` is run, so this step is not needed when creating a project. See below for the proper post-creation initializing method.
 
 ### Cloning your project and submodules
 
 ```bash
 git clone https://github.com/ff0000/red-boilerplate.git --recursive
+npm install
 grunt start
 ```
 
