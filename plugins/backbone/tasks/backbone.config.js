@@ -6,8 +6,9 @@ module.exports = function (grunt) {
 	var fs = require("fs"),
 		cwd = process.cwd(),
 		path = require("path"),
+		redBackbone = require(path.join(__dirname, "..", "plugin.json")),
 		output = path.join("project", "static", "js"),
-		source = path.join("project", "source", "js"),
+		source = redBackbone.config.scope,
 		backboneConfig = path.join("config.js");
 
 	// Project configuration.
@@ -29,11 +30,11 @@ module.exports = function (grunt) {
 			//a built file that contains all of its dependencies. If that module or any
 			//of its dependencies includes i18n bundles, they may not be included in the
 			//built file unless the locale: section is set above.
-			name : grunt.template.process("<%= meta.projectName %>") + "/app",
+			name : grunt.template.process("<%= meta.projectName %>") + "/Site",
 			include : [backboneConfig],
 
 			// The name of the optimized file is specified by 'out'.
-			out : path.join(output, "app.min.js"),
+			out : path.join(output, "site.min.js"),
 
 			//Introduced in 2.1.2 and considered experimental.
 			//If the minifier specified in the "optimize" option supports generating
