@@ -92,6 +92,10 @@ module.exports = function (grunt) {
 
 		var addHooks = function () {
 			var hookDir = path.join(pkg.config.dirs.config, "hooks");
+			if (!fs.lstatSync(path.join(cwd, ".git")).isDirectory()) {
+				grunt.log.writeln("    ".grey + "Not adding git hooks".yellow);
+				return;
+			}
 
 			if (fs.existsSync(hookDir)) {
 				grunt.log.writeln("    ".grey + "Adding git hooks.".grey);
@@ -114,7 +118,7 @@ module.exports = function (grunt) {
 				grunt.log.writeln();
 				grunt.log.writeln("[*] ".grey + "Shrinkwrapped npm packages.".grey);
 
-				addHooks();
+				// addHooks();
 				initialBuild(finalizeInstall);
 			});
 		};
@@ -301,7 +305,7 @@ module.exports = function (grunt) {
 
 		var getThisPartyStarted = function () {
 			if (pkg.initialized) {
-				addHooks();
+				// addHooks();
 				initialBuild(alreadyStarted);
 			} else {
 				prompt = require("prompt");
